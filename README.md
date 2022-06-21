@@ -10,4 +10,8 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 4. Think! About Your Work. Constantly be thinking, critiquing your work in real time
 5. Care About Your Craft
 6. When you find yourself saying, “I don’t know,” be sure to follow it up with “—but I’ll find out.”
-7. Don’t leave “broken windows’’ (bad designs, wrong decisions, or poor code) unrepaired. Fix each one as soon as it is discovered. If there is insufficient time to fix it properly, then board it up. Otherwise, you invite "software rot"
+7. Don’t leave “broken windows’’ (bad designs, wrong decisions, or poor code) unrepaired. Fix each one as soon as it is discovered. If there is insufficient time to fix it properly, then board it up. Neglect accelerates software rot faster than any other factor.
+8. Like the soldiers in "The Stone Soup Story", be a catalyst for change. However, be as objective as you can be when you try to catalyze a change.
+9. Constantly review what’s happening around you, not just what you personally are doing. Remember the big picture.
+10. Let your users and stakeholders participate in deciding what is good enough software. Great software today is often preferable to the fantasy of perfect software tomorrow. If you give your users something to play with early, their feedback will often lead you to a better eventual solution.
+11. An investment in knowledge always pays the best interest
