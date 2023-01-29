@@ -48,4 +48,16 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Know your Audience
 - You’re communicating only if you’re conveying what you mean to convey—just talking isn’t enough. To do that, you need to understand the needs, interests, and capabilities of your audience.
 - Plan what you want to say. Write an outline. Refine it until it commmunicates exactly what you want to say to your audience
--
+- Be a listener, encourage people to talk by asking questions.
+- Get back to people. do your best to respond to emails, voicemails, chats etc. "I'll get back to you later" can buy you sometime if you need it.
+
+> It is both what you say and The way you say it.
+
+- Pragmatic programmers embrace documentation. Keep documentation as close as possible--in the code itself.
+- It is easy to produce good documentation from comments in source code.
+
+> It is recommended to add comments to modules and exported functions.
+
+- Add comments to capture engineering trade-offs, why decisions were made, other alternatives that were discarded, etc.
+
+## Chapter 2 - A Pragmatic Approach
