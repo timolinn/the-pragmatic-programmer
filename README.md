@@ -61,3 +61,25 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Add comments to capture engineering trade-offs, why decisions were made, other alternatives that were discarded, etc.
 
 ## Chapter 2 - A Pragmatic Approach
+
+#### The Essence of Good Design
+
+- Good design is easier to change than bad design.
+- A thing is well designed if it adapts to people who use it.
+- In code, adapting means changing; So apply the ETC principle; __EASIER TO CHANGE__. This is not a rule but a simple guide.
+- internalizing good engineering preinciples takes time and practice, be patient make notes about current situations and decisions then give yourself feedaback when the code changes.
+- `DRY` is not just about code - code is a tiny part - `DRY` is more about avoiding duplication of __Knowledge and Intent__.
+- Not all code duplication is knowledge duplication
+- Interdeveloper deuplication is the hardest to discover or fix. THe best way to deal with this is to encourage frquent communication between developers.
+- Make a point of reading other peoples code and documentation, formally or informally-- you're learning from them.
+
+#### Orthogonality
+
+- Two or more things are orthogonal if changes in one do not affect any of the others.
+- Design components that are self-contained: independent, and with a single well-defined prupose
+- Orthogonality increases productivity by guaranteeing changes are localized, and so development time and testing time are reduced. It also promotes reuse.
+- To maintain orthogonality, write shy code -- modules that don't reveal anything unnecessary to other modules and don't rely on other modules implementations.
+- Avoid global data.
+- Duplicate code is a symptom of structural problem.
+- Get into the habit of being constantly critical of your code.
+Lokk for opportunities to improve you code structuaally or to make it more orthogonal. This process is called __Refactoring__
