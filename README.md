@@ -78,7 +78,7 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 
 - Commonly known as decoupling/modular/layered systems by developers.
 - Two or more things are orthogonal if changes in one do not affect any of the others.
-- Design components that are self-contained: independent, and with a single well-defined purpose
+- Design components that are self-contained: independent, and with a single well-defined purpose are said to be orthogonal.
 - Orthogonality increases productivity by guaranteeing changes are localized, and so development time and testing time are reduced. It also promotes reuse.
 - Look for opportunities to improve your code structurally or to make it more orthogonal. This process is called __Refactoring__
 - Eliminate Effects Between Unrelated Things
@@ -88,6 +88,8 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Duplicate code is a symptom of structural problem.
 - Get into the habit of being constantly critical of your code.
 - An orthogonally designed and implemented system is easier to test.
+- Look for opportunities to improve your code structurally or to make it more orthogonal. This process is called __Refactoring__
+- In summary, Orthogonality is reducing the interdependency among a system's components.
 
 ### Reversibility
 
