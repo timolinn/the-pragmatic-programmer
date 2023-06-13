@@ -166,3 +166,17 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 > CHALLENGE: lose the trackpad/mouse for week, you'll find things you can do without pointing. Learn how to do it. Keep notes of key sequences you learn.
 
 - On growing and extending your IDE with extensions, if you cannot find an extension that does what you want, write one.
+- Knowing you can roll back to a previous state using a VCS is one thing, but can you actually do it? Are your commit well defined enough that rolling back is easy and straightforward?
+- Put all your local configs and preferences in VCS. Including installed apps.
+- Thought Experiment: Spill a cup of tea on your PC. Buy a new one how long will it take you to restore your new machine to the state of the other one?
+
+### Psychology of Debugging
+
+- Debugging is a sensitive, emotional subject for many developers. Instead of attacking it as a puzzle to be solved, you may encounter denial, finger pointing, lame excuses, or just plain apathy.
+- It doesn’t really matter whether the bug is your fault or someone else’s. It is still your problem. Fix the problem, Not the blame.
+- A debugging mindset means to step back a pace and actually think about what could be causing the symptoms. Don't panic and keep your ego in check.
+- Always try to discover the root cause of a problem, not just this particular appearance of it.
+- Write a failing test before fixing the code.
+- Read the error message.
+- Logging and tracing. Debuggers and a stack trace can only tell you the state and how you get there respectively, but they typically will not tell you what you were doing before you got there. That is where logs/tracing comes into play.
+- **Rubber Ducking**: A very simple but particularly useful technique for finding the cause of a problem is simply to explain it to someone else. The other person should look over your shoulder at the screen, and nod his or her head constantly (like a rubber duck bobbing up and down in a bathtub).
