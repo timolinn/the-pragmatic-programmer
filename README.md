@@ -180,3 +180,27 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Read the error message.
 - Logging and tracing. Debuggers and a stack trace can only tell you the state and how you get there respectively, but they typically will not tell you what you were doing before you got there. That is where logs/tracing comes into play.
 - **Rubber Ducking**: A very simple but particularly useful technique for finding the cause of a problem is simply to explain it to someone else. The other person should look over your shoulder at the screen, and nod his or her head constantly (like a rubber duck bobbing up and down in a bathtub).
+
+## Pragmatic Paranoia
+
+- YOU CAN'T WRITE PERFECT SOFTWARE: Accept it as an axiom of life. Embrace it. Celebrate it. Because perfect software doesn’t exist.
+- Software engineering is mostly a team effort, so we are trained to code defensively: We use assertions to detect bad data, and distrust data from potential attackers or trolls. We check for consistency, put constraints on database columns, and generally feel pretty good about ourselves. But Pragmatic Programmers take this a step further. They don’t trust themselves, either.
+- Knowing that no one writes perfect code, including themselves, Pragmatic Programmers build in defenses against their own mistakes.
+- Over the millennia, humans have developed techniques to deal with fellow humans. Contracts are one of these techniques that can be applied when dealing with computers.
+- Contracts define your rights and responsibilities as well as those of the other party. In addition there is an agreement concerning repercussions if either party fails to abide by the contract.
+- Design with Contract
+- Clients and Servers must agree on rights and responsibilities.
+- Dead Programs Tell No Lies: we want to ensure that we do no damage while we’re working the bugs out. So we try to check things often and terminate the program if things go awry.
+- Assertive programming: describes an easy method of checking along the way—write code that actively verifies your assumptions.
+- Whenever you find yourself thinking “but of course that could never happen,” add code to check it.
+- The function or object that allocates a resource should be responsible for de-allocating it--finish what you start.
+- For anything that you create that takes up a finite resource, consider how to balance it--eg. if you are logging to a database how about a process to expire them after sometime?
+- Because Pragmatic Programmers trust no one, including ourselves, we feel that it is always a good idea to build code that actually checks that resources are indeed freed appropriately.
+
+> Don't Outrun your headlights---Take small steps always
+
+- As pragmatic programmers we know we can't really see too far in the future, so we follow a rule: __Take Small Steps--Always__.
+- Always take small, deliberate steps, checking for feedback and adjusting before proceeding. Consider that the rate of feedback is your speed limit. You never take on a step or a task that’s “too big.
+- Note that feedbacks can be unit tests, user demo and conversations etc.
+- Any task that requires "fortune telling" is too big.
+- Much of the time, tomorrow looks a lot like today. But don’t count on it.
