@@ -181,7 +181,7 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Logging and tracing. Debuggers and a stack trace can only tell you the state and how you get there respectively, but they typically will not tell you what you were doing before you got there. That is where logs/tracing comes into play.
 - **Rubber Ducking**: A very simple but particularly useful technique for finding the cause of a problem is simply to explain it to someone else. The other person should look over your shoulder at the screen, and nod his or her head constantly (like a rubber duck bobbing up and down in a bathtub).
 
-## Pragmatic Paranoia
+## Chapter 4 - Pragmatic Paranoia
 
 - YOU CAN'T WRITE PERFECT SOFTWARE: Accept it as an axiom of life. Embrace it. Celebrate it. Because perfect software doesn’t exist.
 - Software engineering is mostly a team effort, so we are trained to code defensively: We use assertions to detect bad data, and distrust data from potential attackers or trolls. We check for consistency, put constraints on database columns, and generally feel pretty good about ourselves. But Pragmatic Programmers take this a step further. They don’t trust themselves, either.
@@ -202,5 +202,65 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - As pragmatic programmers we know we can't really see too far in the future, so we follow a rule: __Take Small Steps--Always__.
 - Always take small, deliberate steps, checking for feedback and adjusting before proceeding. Consider that the rate of feedback is your speed limit. You never take on a step or a task that’s “too big.
 - Note that feedbacks can be unit tests, user demo and conversations etc.
-- Any task that requires "fortune telling" is too big.
+- Any task that requires "fortune telling" is too big. You're fortune telling if your estimate is months in the future, guessing users future needs, guessing technology availability, plan future maintenance.
 - Much of the time, tomorrow looks a lot like today. But don’t count on it.
+
+## Chapter 5 - Bend, or Break
+
+### Decoupling
+
+- Coupling is the enemy of change, because it links together things that must change in parallel. This makes change more difficult
+- Some symptoms of coupling:
+  - Wacky dependencies between unrelated modules or libraries
+  - “Simple” changes to one module that propagate through unrelated modules in the system or break stuff elsewhere in the system
+  - Developers who are afraid to change code because they aren’t sure what might be affected
+  - Meetings where everyone has to attend because no one is sure who will be affected by a change
+- The principle of "Tell, Don't Ask" (TDA) states that: you shouldn’t make decisions based on the internal state of an object and then update that object. Doing so totally destroys the benefits of encapsulation and, in doing so, spreads the knowledge of the implementation throughout the code. Basically, tell the object what to do, don't ask it for something and do something on it based on its internal details.
+- When you want to access something, try not to chain methods, don't have more than one `.`. Unless the things you're chaining are really, really unlikely to change. eg. std libraries
+
+> Globally accessible data is an insidious source of coupling between application components.
+
+- Avoid global data, including singletons, external resources--make sure you always wrap these resources behind code that you control.
+- If It’s Important Enough to Be Global, Wrap It in an API.
+
+### Juggling the real world
+
+- These days computers are expected to fit into our messy world, writing applications that respond to events regardless of the source will work better in the real world.
+- Four strategies for writing applications that will work better in the real world:
+  - Finite state machines
+  - The Observer pattern
+  - Pub/Sub
+  - Reactive Programming and Streams
+- A state machine is basically just a specification of how to handle events. It consists of a set of states, one of which is the current state. For each state, we list the events that are significant to that state. For each of those events, we define the new current state of the system. State machines are underused by developers, and we’d like to encourage you to look for opportunities to apply them.
+- In the observer pattern we have a source of events, called the observable and a list of clients, the observers, who are interested in those events. The observer pattern has a problem: because each of the observers has to register with the observable, it introduces coupling. It can also introduce performance bottlenecks, since the notifier has to process registered functions synchronously.
+- Publish/Subscribe (pubsub) generalizes the observer pattern, at the same time solving the problems of coupling and performance.
+- If you’ve ever used a spreadsheet, then you’ll be familiar with reactive programming. If a cell contains a formula which refers to a second cell, then updating that second cell causes the first to update as well.
+
+### Transforming Programming
+
+- All programs transform data, converting an input into an output. And yet when we think about design, we rarely think about creating transformations. Instead we worry about classes and modules, data structures and algorithms, languages and frameworks.
+- Programming Is About Code, But Programs Are About Data
+- A top down approach to finding transformation is with the requirements, determining its inputs and outputs.
+- Thinking in transformations and applying the philosophy data pipelining
+- Don't Hoard State, Pass It Around
+
+### Inheritance Tax
+
+> You wanted a banana but what you got was a gorilla holding the banana and the entire jungle. ➤ Joe Armstrong
+
+- Inheritance is coupling. Not only is the child class coupled to the parent, the parent’s parent, and so on, but the code that uses the child is also coupled to all the ancestors
+- Don't pay Inheritance tax use these alternatives:
+  - Interfaces and protocols
+  - Delegation
+  - Mixins and traits
+- Prefer Interfaces to Express Polymorphism
+- Use Mixins to Share Functionality
+- Parameterize Your App Using External Configuration
+- Static configuration is good, but configuration as a service is better.
+- Configuration as a service: storing configuration behind a service API:
+  - Multiple applications can share configuration information, with authentication and access control limiting what each can see.
+  - Configuration changes can be made globally.
+  - The configuration data can be maintained via a specialized UI.
+  - The configuration data becomes dynamic.
+- The idea that we should have to stop and restart an application to change a single parameter is hopelessly out of touch with modern realities. Whatever form it takes, configuration data drives the runtime behavior of an application. When configuration values change, there’s no need to rebuild the code.
+-
