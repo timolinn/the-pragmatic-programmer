@@ -263,4 +263,17 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
   - The configuration data can be maintained via a specialized UI.
   - The configuration data becomes dynamic.
 - The idea that we should have to stop and restart an application to change a single parameter is hopelessly out of touch with modern realities. Whatever form it takes, configuration data drives the runtime behavior of an application. When configuration values change, there’s no need to rebuild the code.
--
+
+## Chapter 5 - Concurrency
+
+- Concurrency is when the execution of two or more pieces of code act as if they run at the same time. Parallelism is when they do run at the same time
+- Analyze application workflow as part of the design to identify opportunities of what can be done at the same time. This can be easily done with an activity diagram
+- Shared state is incorrect state.
+- A semaphore is simply a thing that only one person can own at a time.
+- A lot of attention is given to shared memory as a source of concurrency problems, but in fact the problems can pop up anywhere where your application code shares mutable resources: files, databases, external services, and so on
+- Random Failures Are Often Concurrency Issues
+- Concurrency in a shared resource environment is difficult, and managing it yourself is fraught with challenges.
+- Use Actors For Concurrency Without Shared State
+- In the actor model, there’s no need to write any code to handle concurrency, as there is no shared state.
+- Use Blackboards to Coordinate Workflow
+- Messaging systems can be like blackboards.
