@@ -11,7 +11,7 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - Care About Your Craft
 - When you find yourself saying, “I don’t know,” be sure to follow it up with “—but I’ll find out.”
 - Don’t leave “broken windows’’ (bad designs, wrong decisions, or poor code) unrepaired. Fix each one as soon as it is discovered. If there is insufficient time to fix it properly, then board it up. Neglect accelerates software rot faster than any other factor.
-- Like the soldiers in "The Stone Soup Story", be a catalyst for change. However, be as objective as you can be when you try to catalyze a change.
+- Like the soldiers in [The Stone Soup Story](https://en.wikipedia.org/wiki/Stone_Soup), be a catalyst for change. However, be as objective as you can be when you try to catalyze a change.
 - Constantly review what’s happening around you, not just what you personally are doing. Remember the big picture.
 - Let your users and stakeholders participate in deciding what is good enough software. Great software today is often preferable to the fantasy of perfect software tomorrow. If you give your users something to play with early, their feedback will often lead you to a better eventual solution.
 - Don’t spoil a perfectly good program by overembellishment and overrefinement. Move on, and let your code stand in its own right for a while. It may not be perfect. Don’t worry: it could never be perfect.
@@ -264,7 +264,7 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
   - The configuration data becomes dynamic.
 - The idea that we should have to stop and restart an application to change a single parameter is hopelessly out of touch with modern realities. Whatever form it takes, configuration data drives the runtime behavior of an application. When configuration values change, there’s no need to rebuild the code.
 
-## Chapter 5 - Concurrency
+## Chapter 6 - Concurrency
 
 - Concurrency is when the execution of two or more pieces of code act as if they run at the same time. Parallelism is when they do run at the same time
 - Analyze application workflow as part of the design to identify opportunities of what can be done at the same time. This can be easily done with an activity diagram
@@ -277,3 +277,72 @@ What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a
 - In the actor model, there’s no need to write any code to handle concurrency, as there is no shared state.
 - Use Blackboards to Coordinate Workflow
 - Messaging systems can be like blackboards.
+
+## Chapter 7 - While you are coding
+
+- Coding is not mechanical, there are decisions to be made every minute—decisions that require careful thought and judgment if the resulting program is to enjoy a long, accurate, and productive life.
+- Listen to your lizard brain: pay attention to that nervous or queasy feeling your brain might be trying to tell you something.
+- On the says coding feels like some uphill task, resist the urge to soldier on instead think about the code, perhaps your brain is trying to tell you that task is harder than it should be or the design is wrong or you should be solving a different problem.
+-  Give yourself a little time and space to let your brain organize itself. Stop thinking about the code, and do something that is fairly mindless for a while, away from a keyboard. Take a walk, have lunch, chat with someone. Maybe sleep on it. Let the ideas percolate up through the layers of your brain on their own: you can’t force it. If that’s not working, try externalizing the issue.
+- Learning to listen to your gut when coding is an important skill to foster. But it applies to the bigger picture are well. Sometimes a design just feels wrong, or some requirement makes you feel uneasy. Stop and analyze these feelings. If you’re in a supportive environment, express them out loud
+- For code you write that others will call, the basic principles of good modularization and of hiding implementation behind small, well-documented interfaces can all help
+- Avoid programming by coincidence, program against documented interfaces and not just of some behavior that could change or is incorrect
+- Program deliberately:
+  - be aware of what you are doing
+  - can you explain the code in detail to a junior engineer? if not you might be relying on a coincidence
+  - don't use tech you don't fully grasp or build an application you don't fully understand
+  - plan
+  - don't depend on assumptions, always assume the worst
+  - document your assumptions
+  - don't just test your code, test your assumptions
+  - don't be  a slave to history, don't let existing code determine your future code
+- Estimate the Order of Your Algorithms and Test Your Estimates
+-  Rather than construction, software is more like gardening—it is more organic than concrete. You plant many things in a garden according to an initial plan and conditions. Some thrive, others are destined to end up as compost
+- The gardening metaphor is much closer to the realities of software development. Perhaps a certain routine has grown too large, or is trying to accomplish too much—it needs to be split into two. Things that don’t work out as planned need to be weeded or pruned.
+- Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
+- refactoring is a day-to-day activity, taking low-risk small steps, like weeding and raking
+- Reasons to refactor:
+  - Duplication
+  - Non-orthogonal design
+  - Outdated knowledge
+  - Usage
+  - Performance
+  - The tests pass
+- Time pressure is often used as an excuse for not refactoring. But this excuse just doesn’t hold up: fail to refactor now, and there’ll be a far greater time investment to fix the problem down the road—when there are more dependencies to reckon with
+- Refactor Early, Refactor Often
+- Refactoring tips:
+  - Don’t try to refactor and add functionality at the same time
+  - Make sure you have good tests before you begin refactoring.  Run the tests as often as possible. That way you will know quickly if your changes have broken anything.
+  - Take short, deliberate steps.  Refactoring often involves making many localized changes that result in a larger-scale change. If you keep your steps small, and test after each step, you will avoid prolonged debugging
+- Testable code is good code.
+- Before writing code, thinking about how to test the code you are about to write is a good way discover useful insight that reduces coupling
+- A Test Is the First User of Your Code
+- By all means practice TDD. But, if you do, don’t forget to stop every now and then and look at the big picture. It is easy to become seduced by the green "tests passed" message, writing lots of code that doesn’t actually get you closer to a solution.
+- Build End-to-End, Not Top-Down or Bottom Up: The only way to build software is incrementally. Build small pieces of end-to-end functionality, learning about the problem as you go. Apply this learning as you continue to flesh out the code, involve the customer at each step, and have them guide the process.
+- Test Your Software, or Your Users Will
+- Use Property-Based Tests to Validate Your Assumptions
+- Pragmatic Programmers have a healthy amount of paranoia
+- Basic security principles:
+  - 1. Minimize Attack Surface Area
+  - 2. Principle of Least Privilege
+  - 3. Secure Defaults
+  - 4. Encrypt Sensitive Data
+  - 5. Maintain Security Updates
+
+### Password Anti patterns
+- Do not restrict password length to less than 64 characters. NIST recommends 256 as a good maximum length.
+- Do not truncate the user’s chosen password.
+- Do not restrict special characters such as []();&%$# or /. If special characters in your password will compromise your system, you have bigger problems. The NIST says to accept all printing ASCII characters, space, and Unicode.
+- Do not provide password hints to unauthenticated users, or prompt for specific types of information (e.g., “what was the name of your first pet?”).
+- Do not disable the paste function in the browser. Crippling the functionality of the browser and password managers does not make your system more secure, in fact it drives users to create simpler, shorter passwords that are much easier to compromise. Both the NIST in the US and the National Cyber Security Centre in the UK specifically require verifiers to allow paste functionality for this reason.
+- Do not impose other composition rules. For example, do not mandate any particular mix of upper and lower case, numerics, or special characters, or prohibit repeating characters, and so on.
+- Do not arbitrarily require users to change their passwords after some length of time. Only do this for a valid reason (e.g., if there has been a breach).
+- In summary; You want to encourage long, random passwords with a high degree of entropy. Putting artificial constraints limits entropy and encourages bad password habits, leaving your user’s accounts vulnerable to takeover
+
+### Naming things
+
+> There are two hard things in computer science: cache invalidation, naming things and off-by-one errors.
+
+- Honor the culture. ie. follow the convention of naming certain things in you programming language. eg. in C `i` is used in loops for index
+- Every project has its own vocabulary: jargon words that have a special meaning to the team.  It’s important that everyone on the team knows what these words mean, and that they use them consistently.
+- Have a project glossary, listing the terms that have special meaning to the team. This is an informal document, possibly maintained on a wiki, possibly just index cards on a wall somewhere.
