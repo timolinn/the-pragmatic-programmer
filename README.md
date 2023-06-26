@@ -1,5 +1,28 @@
 # The Pragmatic Engineer
 
+- [The Pragmatic Engineer](#the-pragmatic-engineer)
+  - [Chapter 1 - The Pragmatic Philosophy](#chapter-1---the-pragmatic-philosophy)
+  - [Chapter 2 - A Pragmatic Approach](#chapter-2---a-pragmatic-approach)
+    - [The Essence of Good Design](#the-essence-of-good-design)
+    - [Orthogonality](#orthogonality)
+    - [Reversibility](#reversibility)
+    - [Tracer Bullets](#tracer-bullets)
+    - [Prototypes](#prototypes)
+    - [Domain Language](#domain-language)
+    - [Estimating](#estimating)
+  - [Chapter 3 - The Basic Tools](#chapter-3---the-basic-tools)
+    - [Psychology of Debugging](#psychology-of-debugging)
+  - [Chapter 4 - Pragmatic Paranoia](#chapter-4---pragmatic-paranoia)
+  - [Chapter 5 - Bend, or Break](#chapter-5---bend-or-break)
+    - [Decoupling](#decoupling)
+    - [Juggling the real world](#juggling-the-real-world)
+    - [Transforming Programming](#transforming-programming)
+    - [Inheritance Tax](#inheritance-tax)
+  - [Chapter 6 - Concurrency](#chapter-6---concurrency)
+  - [Chapter 7 - While you are coding](#chapter-7---while-you-are-coding)
+    - [Password Anti patterns](#password-anti-patterns)
+    - [Naming things](#naming-things)
+
 ## Chapter 1 - The Pragmatic Philosophy
 
 What distinguishes Pragmatic Programmers? We feel it’s an attitude, a style, a philosophy of approaching problems and their solutions. They think beyond the immediate problem, placing it in its larger context and seeking out the bigger picture. After all, without this larger context, how can you be pragmatic? How can you make intelligent compromises and informed decisions?
