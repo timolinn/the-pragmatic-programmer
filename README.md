@@ -1,6 +1,6 @@
-# The Pragmatic Engineer
+# The Pragmatic Programmer
 
-- [The Pragmatic Engineer](#the-pragmatic-engineer)
+- [The Pragmatic Programmer](#the-pragmatic-programmer)
   - [Chapter 1 - The Pragmatic Philosophy](#chapter-1---the-pragmatic-philosophy)
   - [Chapter 2 - A Pragmatic Approach](#chapter-2---a-pragmatic-approach)
     - [The Essence of Good Design](#the-essence-of-good-design)
